@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script>
+
+    var Foo = (function() {
+      var foo = function() {
+      };
+      foo.prototype.talk = function(word) {
+        console.log("talking....foo");
+      };
+      return foo;
+    })();
+
+    var Bar = (function() {
+      var bar = function() {
+      };
+      bar.prototype.walk = function() {
+        console.log("walk son!");
+        var model = new Foo();
+        model.talk();
+      };
+      return bar;
+    })();
+
+    var one = new Bar();
+    one.walk();
+
+  </script>
+</body>
+</html>
